@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Money</title>
+
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="bg" style="display: flex; justify-content: center; align-items: center; background: orange; height: 100vh;transition: all 2s;">
+            <button onclick="this.disabled = true;" id="startBtn" style="font-size: 22px; width: 300px; height: 100px; border: none; border-radius: 20px; box-shadow: 0px 11px 6px rgba(0, 0, 0, 0.15);">start</button>
+        </div>
+
+        <script>
+
+            document.getElementById("startBtn").addEventListener("click", () => {
+                
+                // this.style.backgroundColor = generateRandomRGB()
+
+                document.getElementById("bg").style.backgroundColor = generateRandomRGB()
+                
+
+                setInterval( () => {
+                    document.getElementById("bg").style.backgroundColor = generateRandomRGB()
+                }, 3500)
+            })
+
+            function generateRandomNumber(){
+                return Math.random()*255
+            }
+
+            function generateRandomRGB(){
+                let randomR = generateRandomNumber()
+                let randomG = generateRandomNumber()
+                let randomB = generateRandomNumber()
+                return `rgb(${randomR},${randomG},${randomB})`
+            }
+
+        </script>
+    </body>
+</html>
